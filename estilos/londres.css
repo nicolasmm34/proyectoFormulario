@@ -59,15 +59,21 @@ h1{
     text-shadow: 7px 4px 4px #5C4631;
 }
 
-h2{
+h2, legend{
     float: initial;
     font-size: 3em;
     text-align: center;
     text-shadow: 3px 3px 3px #5C4631;
 }
 
-h1, h2{
+h1, h2, legend{
     font-style: italic;
+}
+
+legend{
+    font-weight: bold;
+    color: antiquewhite;
+    text-shadow: 3px 3px 3px #362f28;
 }
 
 header p{
@@ -87,8 +93,16 @@ input{
     border-width: 4px;
 }
 
+input[type=date], input[type=text], input[type=password]{
+    width: 250px;
+}
+
 label, input{
     font-size: 1.5em;
+}
+
+input[type=text], input[type=password]{
+    font-size: 1.25em;
 }
 
 label{
@@ -96,7 +110,7 @@ label{
 }
 
 .error{
-    color: darkred;
+    color: #FF6961;
     font-size: medium;
     font-weight: bold;
 }
@@ -113,7 +127,7 @@ img{
     border-radius: 10px;
 }
 
-table{
+fieldset{
     background-color: #5C4631;
     border: 5px solid #362f28;
     border-radius: 10px;

@@ -39,7 +39,8 @@ let estaVacio = (valor, id, mensaje) =>{
         document.getElementById(id).innerHTML = mensaje;
         return true;
     }
-    document.getElementById(id).innerHTML = "";
+    /* "\u00A0" es el equivalente en JavaScript de "&nbsp;" */
+    document.getElementById(id).innerHTML = "\u00A0";
     return false; 
 }
 
