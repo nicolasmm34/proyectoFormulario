@@ -27,7 +27,7 @@ let validaciones = () =>{
     if(!estaVacio(repass, "errorRepass", mensajeError)) repassOk = validarConfirmacion();  
 
     /* Comprobación de todas las validaciones */
-    if(nombreOk && apellidoOk && fechaOk && correoOk && passOk && repassOk){
+    if(nombreOk && apellidoOk && fechaOk && emailOk && passOk && repassOk){
         alert("La cuenta ha sido creada correctamente");
         /* Actualización de la página para reiniciar el formulario */
         window.location.reload();

@@ -1,61 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilos/londres.css">
     <title>Formulario</title>
-    <style>
-        tr td p{
-            color: red;
-        }
-    </style>
 </head>
+
 <body>
-    <form name="formulario">
+    <header>
         <h1>Creación de cuenta</h1>
-        <fieldset>
-            <legend>Datos de usuario</legend>
-            <table>
-                <tr>
-                    <td><label for="nombre">Nombre: </label></td>
-                    <td><input type="text" id="nombre" name="nombre" size="10"></td>
-                </tr>
-                <tr><td colspan="2"><p id="errorNombre"></p></td></tr>
-                <tr>
-                    <td><label for="apellido1">Apellido 1: </label></td>
-                    <td><input type="text" id="apellido1" name="apellido1" size="10"></td>
-                </tr>
-                <tr><td colspan="2"><p id="errorApellido"></p></td></tr>
-                <tr>
-                    <td><label for="apellido2">Apellido 2: </label></td>
-                    <td><input type="text" id="apellido2" name="apellido2" size="10"> </td>
-                </tr>
-                <tr><td><p></p></td></tr>
-                <tr>
-                    <td><label for="fecha">Fecha de nacimiento</label></td>
-                    <td><input type="date" id="fecha" name="fecha"></td>
-                </tr>
-                <tr><td colspan="2"><p id="errorFecha"></p></td></tr>
-                <tr >
-                    <td><label for="email">Correo electrónico: </label></td>
-                    <td colspan="2"><input type="text" id="email" name="email" size="25"></td>
-                </tr>
-                <tr><td colspan="2"><p id="errorEmail"></p></td></tr>
-                <tr>
-                    <td><label for="pass">Contraseña: </label></td>
-                    <td><input type="password" id="pass" name="pass" size="10" pas></td>
-                </tr>
-                <tr><td colspan="3"><p id="errorPass"></p></td></tr>
-                <tr>
-                    <td><label for="repass">Confirmar contraseña: </label></td>
-                    <td><input type="password" id="repass" name="repass" size="10"></td>
-                </tr>
-                <tr><td colspan="2"><p id="errorRepass"></p></td></tr>
-            </table><br>
-        <input type="button" value="Crear cuenta" onclick="validaciones()">
-        </fieldset>
-    </form>
-    <p id="p"></p>
-    <script src="./javascript/validaciones.js"></script>
+    </header>
+    <main>
+        <form name="formulario">
+            <div>
+                <h2>Datos de usuario</h2>
+                <table>
+                    <tr>
+                        <td><label for="nombre">Nombre * </label></td>
+                        <td><input type="text" id="nombre" name="nombre" size="20"></td>
+                    </tr>
+                    <tr>
+                        <td><label id="errorNombre" class="error">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="apellido1">Apellido 1 * </label></td>
+                        <td><input type="text" id="apellido1" name="apellido1" size="20"></td>
+                    </tr>
+                    <tr>
+                        <td><label id="errorApellido" class="error">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="apellido2">Apellido 2 </label></td>
+                        <td><input type="text" id="apellido2" name="apellido2" size="20"> </td>
+                    </tr>
+                    <tr>
+                        <td><label>&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fecha">Fecha de nacimiento *</label></td>
+                        <td><input type="date" id="fecha" name="fecha"></td>
+                    </tr>
+                    <tr>
+                        <td><label id="errorFecha" class="error">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Correo electrónico * </label></td>
+                        <td><input type="text" id="email" name="email" size="20"></td>
+                    </tr>
+                    <tr>
+                        <td><label id="errorEmail" class="error">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="pass">Contraseña * </label></td>
+                        <td><input type="password" id="pass" name="pass" size="20" pas></td>
+                    </tr>
+                    <tr>
+                        <td><label id="errorPass" class="error">&nbsp;</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="repass">Confirmar contraseña * </label></td>
+                        <td><input type="password" id="repass" name="repass" size="20"></td>
+                    </tr>
+                    <tr>
+                        <td><label id="errorRepass" class="error">&nbsp;</label></td>
+                    </tr>
+                    <br>
+                    <tr><td><input type="button" value="Crear cuenta" onclick="validaciones()"></td></tr>
+                </table>
+            </div>
+        </form>
+        <script src="./javascript/validaciones.js"></script>
+    </main>
+    <br>
+    <footer>
+        <div>
+            <p>@Nicolás Montiel Melendi - <a href="./about.html">Sobre mí</a></p>
+        </div>
+    </footer>
 </body>
+
 </html>
