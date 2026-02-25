@@ -28,25 +28,26 @@ let validaciones = () =>{
 
     /* Comprobación de todas las validaciones */
     if(nombreOk && apellidoOk && fechaOk && emailOk && passOk && repassOk){
-        alert("La cuenta ha sido creada correctamente");
-        /* Actualización de la página para reiniciar el formulario */
-        window.location.reload();
+        alert(`Se ha creado correctamente la cuenta de ${nombre} ${apellido}`);
+        cambiarFondo("antiquewhite");
+        /* Resetea los inputs cuando se cree una cuenta */
+        reiniciarFormulario();
     }
 }
 
 let estaVacio = (valor, id, mensaje) =>{
     if(valor == ""){ 
-        document.getElementById(id).innerHTML = mensaje;
+        document.getElementById(id).textContent = mensaje;
         return true;
     }
     /* "\u00A0" es el equivalente en JavaScript de "&nbsp;" */
-    document.getElementById(id).innerHTML = "\u00A0";
+    document.getElementById(id).textContent = "\u00A0";
     return false; 
 }
 
 let validarContrasenia = () =>{
     if(pass.length < 8){
-        document.getElementById("errorPass").innerHTML = "La contraseña debe tener al menos 8 caracteres";
+        document.getElementById("errorPass").textContent = "La contraseña debe tener al menos 8 caracteres";
         return false;
     }
     return true;
@@ -54,7 +55,7 @@ let validarContrasenia = () =>{
 
 let validarConfirmacion = () =>{
     if(pass != repass){
-        document.getElementById("errorRepass").innerHTML = "La contraseñas no coinciden";
+        document.getElementById("errorRepass").textContent = "Las contraseñas no coinciden";
         return false;
     }
     return true;
@@ -68,24 +69,43 @@ let validarFecha = () =>{
     let diferencia = (hoy - fechaDate) / (1000 * 3600 * 24 * 365.25);
 
     if(fechaDate > hoy){
-        document.getElementById("errorFecha").innerHTML = "La fecha debe de ser anterior a hoy";
+        document.getElementById("errorFecha").textContent = "La fecha debe de ser anterior a hoy";
         return false;
     }
 
     if(diferencia < 18){
-        document.getElementById("errorFecha").innerHTML = "Para iniciar sesión debe ser mayor de edad";
+        document.getElementById("errorFecha").textContent = "Para iniciar sesión debe ser mayor de edad";
         return false;
     }
 
-    document.getElementById("errorFecha").innerHTML = "";
+    document.getElementById("errorFecha").textContent = "\u00A0";
     return true;
 }
 
 let validarCorreo = () =>{
     if(email.includes("@") && email.includes(".")){
-        document.getElementById("errorEmail").innerHTML = "";
+        document.getElementById("errorEmail").textContent = "\u00A0";
         return true;
     }
-    document.getElementById("errorEmail").innerHTML = "Formato de correo incorrecto";
+    document.getElementById("errorEmail").textContent = "Formato de correo incorrecto  (texto + @ + texto + . + texto)";
     return false;
+}
+
+let reiniciarFormulario = () =>{
+    document.getElementById("nombre").value = "";
+    document.getElementById("apellido1").value = "";
+    document.getElementById("apellido2").value = "";
+    document.getElementById("fecha").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("pass").value = "";
+    document.getElementById("repass").value = "";
+}
+
+/* Método para solucionar problema de centrado de botón con enlace */
+let inicio = () =>{
+    window.location.href = "./index.html";
+}
+
+let cambiarFondo = (color) =>{
+    document.body.style.backgroundColor = color;
 }

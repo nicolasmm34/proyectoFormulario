@@ -102,7 +102,24 @@ label, input{
 }
 
 input[type=text], input[type=password]{
-    font-size: 1.25em;
+    font-size: 1.20em;
+}
+
+input[type=button]{
+    cursor: pointer;
+}
+
+input[type=button]:hover{
+    background-color: antiquewhite;
+}
+
+input[type="date"]{
+    cursor: text;
+}
+
+/* Capbio del cursor a puntero en el calendario */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
 }
 
 label{
@@ -118,6 +135,7 @@ label{
 a{
     color: antiquewhite;
     padding-right: 50px;
+    justify-content: center;
 }
 
 img{
@@ -132,4 +150,10 @@ fieldset{
     border: 5px solid #362f28;
     border-radius: 10px;
 }
+
+tr:last-child td {
+    text-align: center;
+}
+
+
 
